@@ -85,7 +85,7 @@ export default async function Home() {
       <MaxWidthWrapper className="flex items-center flex-col gap-5 ">
         <h2 className=" text-black lg:text-2xl text-xl font-semibold">Categories</h2>
         <div className="flex gap-5  items-center">
-          {tags?.items?.map((tag, i) => (
+          {tags?.items?.map((tag: { name: string; image: string }, i:string) => (
             <div key={i} className="flex items-center flex-col gap-4">
               <div className=" bg-red-100  relative rounded-full h-32 w-32 overflow-hidden py-2">
                 <div className=" relative aspect-square h-28 m-auto">
