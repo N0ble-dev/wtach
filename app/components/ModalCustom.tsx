@@ -45,9 +45,9 @@ const ModalCustom = ({
       <DialogTrigger asChild>{btn}</DialogTrigger>
       <DialogContent
         aria-describedby={desc ? "modal-description" : undefined}
-        className="max-w-4xl min-h-[40vh] z-50 w-[95%] md:w-full overflow-y-auto max-h-[80vh]  sm:rounded-[1.8rem]"
+        className="max-w-4xl min-h-[38vh] z-50 w-[95%] md:w-full overflow-y-auto max-h-[80vh]  sm:rounded-[1.8rem]"
       >
-        <DialogHeader className="mt-10">
+        <DialogHeader className="">
           <DialogTitle className="text-xl text-center text-main2">{title || ""}</DialogTitle>
         </DialogHeader>
         {desc && (

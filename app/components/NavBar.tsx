@@ -59,9 +59,9 @@ const NavBar = () => {
         isHome
           ? "text-white font-semibold placeholder:text-white "
           : `  text-main2 font-semibold placeholder:text-white  ${isScrollingDown && "bg-white/80"}`
-      } fixed inset-0  max-h-[5rem] lg:max-h-[8rem]  z-[99]   md:py-4 py-0  bg-[#F5F5F5] flex flex-col gap-2  transition-all duration-300 ${
+      } fixed inset-0  max-h-[5rem] lg:max-h-[8rem]  z-[40]   md:py-4 py-0  bg-[#F5F5F5] flex flex-col gap-2  transition-all duration-300 ${
         isScrollingDown
-          ? " translate-y-[-150%]"
+          ? "  -translate-y-16 lg:-translate-y-20 $"
           : !isTopPage && !isScrollingDown
           ? `  -translate-y-16 lg:-translate-y-20 ${!isHome && "bg-white/80"}`
           : "translate-y-0"

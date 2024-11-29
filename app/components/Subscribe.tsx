@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import swal from "sweetalert";
 import React from "react";
 import { MdOutlineEmail } from "react-icons/md";
 
@@ -43,6 +43,7 @@ const Subscribe = ({ notitle = false }: { notitle?: boolean }) => {
 
         const data = await res.json();
         console.log(data);
+        swal("Hello world!");
         setMessage({ type: "success", text: "Subscribed successfully!" });
         setEmail("");
       } catch (error: any) {
@@ -53,23 +54,20 @@ const Subscribe = ({ notitle = false }: { notitle?: boolean }) => {
   };
 
   return (
-    <div
-      className={`flex  flex-col  rounded-xl  ${
-        !notitle ? "bg-white gap-4 py-4 px-8 border border-red-500 items-center" : "gap-2"
-      }`}
-    >
-      {!notitle && <h2 className=" font-semibold">Subscribe to our newsletter</h2>}
-      <div className="relative w-full">
-        <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400">
-          <MdOutlineEmail size={20} />
-        </span>
+    <div className={`flex  flex-col  rounded-xl  ${!notitle ? "bg-white gap-4  px-8  items-center" : "gap-2"}`}>
+      <div className="relative flex flex-col items-center w-full">
+        {!notitle && (
+          <span className=" ">
+            <MdOutlineEmail className="text-red-500 -mt-8 size-40 " />
+          </span>
+        )}
 
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          className={`w-full pl-10 pr-4 py-2 bg-transparent ${
-            !notitle ? "text-black" : "text-white"
+          className={`w-full  pr-4 py-2 bg-transparent ${
+            !notitle ? "text-black pl-10" : "text-white"
           }  border-b border-gray-600 placeholder-gray-400 focus:outline-none focus:border-red-500`}
           placeholder="Enter your Email"
         />

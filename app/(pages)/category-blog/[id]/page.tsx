@@ -9,7 +9,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const sortByPublish = await fetch(`${API_URL}posts/?tag=${id}&sort=-publishAt`).then((res) => res.json());
   const sortByView = await fetch(`${API_URL}posts/?tag=${id}&sort=-views&limit=3`).then((res) => res.json());
-
+  console.log(sortByPublish, sortByView);
   return (
     <MaxWidthWrapper>
       <BlogTitle id={id} />
